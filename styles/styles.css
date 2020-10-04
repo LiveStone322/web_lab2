@@ -9,7 +9,7 @@
   --color-bg: #F0F0F0;
   
   /* border radius */
-  --border-radius-small: 10px;
+  --border-radius-small: 5px;
   --border-radius-base: 15px;
   --border-radius-large: 20px;
 
@@ -79,6 +79,11 @@ body {
   opacity: 0;
 }
 
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
 /* playground */
 
 .playground {
@@ -89,18 +94,18 @@ body {
 .playground__box {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   min-width: 400px;
   min-height: 400px;
   box-shadow: var(--shadow-playground);
   border-radius: var(--border-radius-large);
   background: #F9F9F9;
   margin: var(--ident-large);
+  padding: var(--ident-small);
 }
 
 .box__card {
   flex-grow: 1;
+  margin: 2px;
 }
 
 .box__counter {
