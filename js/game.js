@@ -231,7 +231,6 @@ function init() {
 
 function uninit() {
   clear();
-  botBtn.disabled = false;
   playBtn.classList.remove("hidden");
   playBtn.classList.remove("transparent");
   botBtn.classList.remove("btn_transparent");
@@ -259,7 +258,6 @@ function playing() {
 function initBot() {
   if (!playing()) {
     start();
-    botBtn.disabled = true;
     setTimeout(startBot, 3001);
   }
   else startBot();
@@ -270,10 +268,8 @@ function startBot() {
     bot = setInterval(() => {
       let found = false;
       let color = getMainColor();
-      console.log('found color', color);
       for (let i = 0; !found && i < playground.childElementCount; i++) {
         if (playground.childNodes[i].style.background !== color) {
-          console.log('but this ' + i + ' is', playground.childNodes[i].style.background);
           playground.childNodes[i].click();
           found = true;
         }
