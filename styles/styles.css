@@ -41,7 +41,7 @@
   cursor: url(../assets/img/Arrow.cur), default;
 }
 
-h1 {
+h1, .controls__header span {
   font-size: var(--font-size-large);
   font-weight: 700;
   margin-bottom: var(--ident-base);
@@ -126,6 +126,17 @@ body {
 
 .controls__header {
   display: flex;
+}
+
+.controls__header span {
+  position: relative;
+  width: 0;
+  left: -10px;
+  top: -10px;
+  color: var(--color-compl);
+  text-shadow: 
+    2px 0 2px var(--color-base), 
+    0 2px 2px var(--color-base);
 }
 
 .btn {
