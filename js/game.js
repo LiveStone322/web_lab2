@@ -6,6 +6,7 @@ const header = document.getElementsByClassName("controls__header")[0];
 const bodyText = document.querySelector(".controls p");
 const sizeCoeff = 0.6;
 
+let botPlaying = false;
 let recordName = localStorage.getItem("recordName") 
 let recordValue = Number(localStorage.getItem("recordValue"))
 
@@ -248,6 +249,7 @@ function end() {
   clearInterval(countUp);
   clearInterval(timer);
   clearInterval(bot);
+  botPlaying = false;
   uninit();
 }
 
@@ -256,8 +258,10 @@ function playing() {
 }
 
 function initBot() {
+  if (botPlaying) return;
+  botPlaying = true;
   if (!playing()) {
-    start();
+    if (!countUp) start();
     setTimeout(startBot, 3001);
   }
   else startBot();
